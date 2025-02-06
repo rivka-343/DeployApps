@@ -21,7 +21,7 @@ app.UseCors("AllowAllOrigins");
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.MapGet("/",  () =>"hello");
 app.MapGet("/items", async (ToDoDbContext db) =>
 {
     var items = await db.Items.ToListAsync();
