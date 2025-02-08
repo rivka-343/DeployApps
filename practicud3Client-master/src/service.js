@@ -52,7 +52,7 @@ const taskService ={
 
   getTasks: async () => {
     try {
-      const result = await axios.get('')
+      const result = await axios.get('/items')
       return result.data;
     } catch (error) {
       console.error("שגיאה בלקיחת משימות:", error);
@@ -61,7 +61,7 @@ const taskService ={
 
   addTask: async (name) => {
     try {
-      const result = await axios.post('', { name })
+      const result = await axios.post('/items', { name })
       return { result };
     } catch (error) {
       console.error("שגיאה בהוספת משימה:", error);
@@ -70,7 +70,7 @@ const taskService ={
 
   setCompleted: async (todo, isComplete) => {
     try {
-      const result = await axios.put(`/${todo.id}`, { id: todo.id, name: todo.name, isComplete: isComplete });
+      const result = await axios.put(`/items/${todo.id}`, { id: todo.id, name: todo.name, isComplete: isComplete });
       return { result };
     } catch (error) {
       console.error("שגיאה בעידכון משימה:", error);
@@ -79,7 +79,7 @@ const taskService ={
 
   deleteTask: async (id) => {
     try {
-      const result = await axios.delete(`/${id}`)
+      const result = await axios.delete(`/items/${id}`)
       return { result };
     } catch (error) {
       console.error("שגיאה מחיקת משימה:", error);
