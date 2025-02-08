@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ToDoDbContext>();
-
+var connectionString = Environment.GetEnvironmentVariable("ToDoDB");
 builder.Services.AddCors(options =>
 {
             options.AddPolicy("AllowAllOrigins",
