@@ -14,6 +14,12 @@ public partial class ToDoDbContext : DbContext
         : base(options)
     {
     }
+//     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+// {
+//     var connectionString = Environment.GetEnvironmentVariable("ToDoDB");
+//     optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+// }
+
 
     public virtual DbSet<HostSummary> HostSummaries { get; set; }
 
