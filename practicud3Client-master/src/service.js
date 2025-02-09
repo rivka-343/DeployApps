@@ -70,7 +70,7 @@ const taskService ={
 
   setCompleted: async (todo, isComplete) => {
     try {
-      const result = await axios.put(`/items/${todo.id}`, { id: todo.id, name: todo.name, isComplete: isComplete });
+      const result = await axios.put(`/items/${todo}`, { id: todo, name: todo.name, isComplete: isComplete });
       return { result };
     } catch (error) {
       console.error("שגיאה בעידכון משימה:", error);

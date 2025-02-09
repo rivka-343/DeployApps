@@ -18,7 +18,9 @@ function App() {
   }
 
   async function updateCompleted(todo, isComplete) {
-    await service.setCompleted(todo.id, isComplete);
+    console.log(todo.id);
+    
+    await service.setCompleted(todo, isComplete);
     await getTodos();//refresh tasks list (in order to see the updated one)
   }
 
